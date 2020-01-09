@@ -1,0 +1,31 @@
+---
+layout:     post                    # 使用的布局（不需要改）
+title:      My First Post               # 标题 
+subtitle:   Hello World, Hello Blog   #副标题
+date:       2020-01-09              # 时间
+author:     August                      # 作者
+header-img: img/post-bg-2015.jpg    #这篇文章标题背景图片
+catalog: true                       # 是否归档
+tags:                               #标签
+    - Mysql
+---
+
+## Mysql select特殊写法
+> select IF(), (CASE ... END)用法
+
+#### select IF的用法
+  适用于简单的非此即彼的判断
+  
+  select IF(send_time > 0, 1, 0) as is_send from order
+  
+#### select (case ... end)
+  适用于分支条件超过2个的数据处理
+  select id, 
+    (
+    CASE 
+        WHEN score < 60 THEN '不及格'
+        WHEN score >= 60 and score < 80 THEN '及格'
+        WHEN score >= 80 and score < 90 THEN '优秀'
+        ELSE '良好'
+    END) AS rank
+ from student;
